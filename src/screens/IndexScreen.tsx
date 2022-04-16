@@ -32,14 +32,14 @@ const IndexScreen = () => {
 
                     style={styles.button}
                     >
-                    <Text style={styles.buttonText}>Sign In</Text>
+                    <Text style={styles.buttonText}>Iniciar Sesión</Text>
                 </TouchableOpacity>
                 
                 <TouchableOpacity
                     onPress={handlerSignUp}
                     style={[styles.button, styles.buttonOutline]}
                     >
-                    <Text style={styles.buttonOutlineText}>Sign Up</Text>
+                    <Text style={styles.buttonOutlineText}>Registrarse</Text>
                 </TouchableOpacity>
             </View>              
         </KeyboardAvoidingView> 

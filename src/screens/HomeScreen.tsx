@@ -9,25 +9,25 @@ const HomeScreen = () => {
 
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
 
-    function handlerSingOut() {
-        auth
+    async function handlerSingOut() {
+        await auth
             .signOut()
             .then(() => {navigation.replace('Index')})
             .catch((error: any) => alert(error.message))
     }    
 
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding"> 
+    <KeyboardAvoidingView style={styles.container} behavior="padding">         
         
-        <Text style={styles.textHome}>¡Welcome!</Text>
-        <Text style={styles.textDescription}>We are working on a better design. Thank you very much for starting session.</Text>
-        
+        <Text style={styles.textHome}>¡Bienvenido!</Text>
+        <Text style={styles.textDescription}>Estamos trabajando en un mejor diseño. Muchas gracias por iniciar sesión.</Text>
+     
         <View style={styles.buttonContainer} >   
                 <TouchableOpacity 
                     onPress={handlerSingOut}
                     style={styles.button}
                 >
-                <Text style={styles.buttonText}>Sign out</Text>
+                <Text style={styles.buttonText}>Cerrar Sesión</Text>
                 </TouchableOpacity>
             </View>                       
             <Image 
@@ -58,7 +58,9 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginTop: 100, 
         color: '#662483',
-        fontWeight: 'bold',        
+        fontWeight: 'bold',  
+        textAlign: 'center',
+        margin: 5,
     },
     logo:{
         width: '50%',

@@ -6,8 +6,6 @@ import LoginScreen from './src/screens/LoginScreen';
 import IndexScreen from './src/screens/IndexScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
-import SplashScreen from './src/components/SplashScreen';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export type RootStackParamList = {
   Home: any;
@@ -20,8 +18,6 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <SplashScreen></SplashScreen>
       <NavigationContainer theme={DefaultTheme}>
         <Stack.Navigator>
           <Stack.Screen options={{ headerShown: false }} name="Index" component={IndexScreen} />
@@ -30,16 +26,8 @@ export default function App() {
           <Stack.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />
         </Stack.Navigator>
       </NavigationContainer>
-    </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
 });
