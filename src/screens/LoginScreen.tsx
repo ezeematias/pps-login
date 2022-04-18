@@ -47,19 +47,24 @@ const LoginScreen = () => {
             }).finally(() => { setLoading(false) });
     }
 
-    const guestLogin = () => {
-        setEmail("invitado@gmail.com");
-        setPassword("123456");
+    const loginDirect = async (email:string, password:string) => {
+        setLoading(true);
+        await signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential: { user: any; }) => {
+                const user = userCredential.user;   
+            }).finally(() => { setLoading(false) });  
+    }
+
+    const guestLogin = async () => {
+        loginDirect("invitado@gmail.com", "123456");
     }
 
     const adminLogin = () => {
-        setEmail("admin@gmail.com");
-        setPassword("123456");
+        loginDirect("admin@gmail.com", "123456");
     }
 
     const supplierLogin = () => {
-        setEmail("proveedores@gmail.com");
-        setPassword("123456");
+        loginDirect("proveedores@gmail.com", "123456");
     }
 
     const handlerBack = () => {
@@ -72,7 +77,6 @@ const LoginScreen = () => {
                 {loading && <View style={styles.spinContainer}>
                     <Spinner
                         visible={loading}
-                        textContent={'Loading...'}
                         textStyle={styles.spinnerTextStyle}
                     />
                 </View>}
@@ -139,8 +143,7 @@ const LoginScreen = () => {
                     >
                         <Text style={styles.buttonOutlineTextRole}>Proveedores</Text>
                     </TouchableOpacity>   
-                </View>
-                
+                </View>                
             </KeyboardAvoidingView>        
     );
 }
@@ -155,7 +158,7 @@ const styles = StyleSheet.create({
     },
     logo: {
         width: '100%',
-        height: 250,
+        height: '30%',
     },
     inputContainer: {
         width: '80%',
@@ -166,18 +169,18 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         paddingVertical: 10,
         borderRadius: 8,
-        marginTop: 10,
+        marginTop: '5%',
     },
     buttonContainer: {
         width: '80%',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 40,
+        marginTop: '5%',
     },
     button: {
         backgroundColor: '#662483',
         width: '100%',
-        padding: 15,
+        padding: 10,
         borderRadius: 8,
         alignItems: 'center',
     },

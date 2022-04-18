@@ -67,8 +67,7 @@ const SignScreen = () => {
         <KeyboardAvoidingView style={styles.container} behavior="padding">
             {loading && <View style={styles.spinContainer}>
                     <Spinner
-                        visible={loading}
-                        textContent={'Loading...'}
+                        visible={loading}  
                         textStyle={styles.spinnerTextStyle}
                     />
                 </View>}
@@ -141,8 +140,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     logo: {
-        width: '100%',
-        height: 250,
+        width: '50%',
+        height: '20%',
     },
     inputContainer: {
         width: '80%',
@@ -160,12 +159,12 @@ const styles = StyleSheet.create({
         width: '80%',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 40,
+        marginTop: 20,
     },
     button: {
         backgroundColor: '#662483',
         width: '100%',
-        padding: 15,
+        padding: 10,
         borderRadius: 8,
         alignItems: 'center',
     },

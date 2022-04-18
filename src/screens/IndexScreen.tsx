@@ -57,18 +57,18 @@ const styles = StyleSheet.create({
     },
     logo:{
         width: '100%',
-        height: 250, 
+        height: '30%', 
     },
     buttonContainer: {
         width: '80%',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 40,        
+        marginTop: '5%',        
     },
     button: {
         backgroundColor: '#662483',
         width: '100%',
-        padding: 15,
+        padding: 10,
         borderRadius: 8,
         marginTop: 80,
         alignItems: 'center',        
