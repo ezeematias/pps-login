@@ -17,7 +17,7 @@ const HomeScreen = () => {
     }    
 
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding">         
+    <View style={styles.container}>         
         
         <Text style={styles.textHome}>¡Bienvenido!</Text>
         <Text style={styles.textDescription}>Estamos trabajando en un mejor diseño. Muchas gracias por iniciar sesión.</Text>
@@ -36,7 +36,7 @@ const HomeScreen = () => {
                 style={styles.logo} 
             />    
         
-    </KeyboardAvoidingView>
+    </View>
   );
 }
 

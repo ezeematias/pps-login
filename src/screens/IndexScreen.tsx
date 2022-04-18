@@ -19,7 +19,7 @@ const IndexScreen = () => {
     }
 
     return (   
-        <KeyboardAvoidingView style={styles.container} behavior="padding"> 
+        <View style={styles.container}> 
             <Image 
                 source={require('../assets/EMU_Logo_01.png')}
                 resizeMode="contain"                 
@@ -42,7 +42,7 @@ const IndexScreen = () => {
                     <Text style={styles.buttonOutlineText}>Registrarse</Text>
                 </TouchableOpacity>
             </View>              
-        </KeyboardAvoidingView> 
+        </View> 
          
     );
 }

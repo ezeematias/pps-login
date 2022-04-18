@@ -73,7 +73,7 @@ const LoginScreen = () => {
 
     return (
         
-        <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <View style={styles.container}>
                 {loading && <View style={styles.spinContainer}>
                     <Spinner
                         visible={loading}
@@ -89,6 +89,7 @@ const LoginScreen = () => {
                 <View style={styles.inputContainer}>
                     {!!message ? <TouchableOpacity
                         style={styles.buttonError}
+                        onPress={() => setMessage("")}
                     >
                         <Text style={styles.buttonText}>{message}</Text>
                     </TouchableOpacity> : null}
@@ -144,7 +145,7 @@ const LoginScreen = () => {
                         <Text style={styles.buttonOutlineTextRole}>Proveedores</Text>
                     </TouchableOpacity>   
                 </View>                
-            </KeyboardAvoidingView>        
+            </View>        
     );
 }
 

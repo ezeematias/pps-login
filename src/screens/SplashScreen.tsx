@@ -18,7 +18,7 @@ export default function Splash() {
       <ImageBackground style={{width: win.width ,
                               height: win.height ,
                               alignSelf: "center",}}  
-                        source={require('C:/Users/ezequiel.unia/Desktop/pps-login/assets/splash.gif')} />
+                        source={require('../../assets/splash.gif')} />
     </View>
   );
 }

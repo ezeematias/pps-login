@@ -16,7 +16,7 @@ const SignScreen = () => {
     const [loading, setLoading] = useState(false);
     
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
-
+    
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -64,7 +64,7 @@ const SignScreen = () => {
     }
 
     return (
-        <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <View style={styles.container}>
             {loading && <View style={styles.spinContainer}>
                     <Spinner
                         visible={loading}  
@@ -77,10 +77,10 @@ const SignScreen = () => {
                 style={styles.logo}
             />
 
-
             <View style={styles.inputContainer}>
                 {!!message ? <TouchableOpacity
                     style={styles.buttonError}
+                    onPress={() => setMessage("")}
                 >
                     <Text style={styles.buttonText}>{message}</Text>
                 </TouchableOpacity> : null}
@@ -126,7 +126,7 @@ const SignScreen = () => {
                     <Text style={styles.buttonOutlineText}>Volver</Text>
                 </TouchableOpacity>
             </View>
-        </KeyboardAvoidingView>
+        </View>
 
     );
 }
